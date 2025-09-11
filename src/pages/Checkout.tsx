@@ -32,48 +32,60 @@ const Checkout = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    try {
-      // Generate order number
-      const orderNumber = `ORD-${Date.now()}`;
-      const orderDate = new Date().toLocaleDateString();
-      
-      // Prepare order data for PDF
-      const orderData: OrderData = {
-        orderNumber,
-        customerInfo: formData,
-        items: cartItems,
-        subtotal,
-        shipping,
-        total,
-        orderDate
-      };
-      
-      // Generate PDF
-      const pdfBlob = await generateOrderPDF(orderData);
-      
-      // Send to WhatsApp and Email
-      await sendToWhatsApp(pdfBlob, formData.phone, orderNumber, orderData);
-      sendToEmail(pdfBlob, "hashimraj02@gmail.com", orderNumber, orderData);
-      
-      toast({
-        title: "Order Placed Successfully!",
-        description: "PDF generated and ready to share via WhatsApp!",
-      });
+  const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
 
-      // Clear cart after successful order
-      clearCart();
-    } catch (error) {
-      console.error('Error processing order:', error);
-      toast({
-        title: "Error",
-        description: "There was an issue processing your order. Please try again.",
-        variant: "destructive"
-      });
-    }
-  };
+  try {
+    // Generate order number
+    const orderNumber = `ORD-${Date.now()}`;
+    const orderDate = new Date().toLocaleDateString();
+
+    // Build order summary
+    const itemsList = cartItems.map(
+      (item) => `🛒 ${item.name} (Size: ${item.size}, Qty: ${item.quantity}) - $${(item.price * item.quantity).toFixed(2)}`
+    ).join("\n");
+
+    const message = `
+🔔 *New Order Alert!* 🔔
+
+ *Order Number:* ${orderNumber}
+ *Date:* ${orderDate}
+
+👤 *Customer Info:*
+- Name: ${formData.firstName} ${formData.lastName}
+- Email: ${formData.email}
+- Phone: ${formData.phone}
+- Address: ${formData.address}, ${formData.city}, ${formData.postalCode}
+
+📦 *Items Ordered:*
+${itemsList}
+
+*Total:* $${total.toFixed(2)}
+
+📝 *Special Instructions:* ${formData.specialInstructions || "None"}
+    `;
+
+    // Send to shop’s WhatsApp (Kenya number: +254758905603)
+    const whatsappNumber = "254758905603";
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, "_blank");
+
+    toast({
+      title: "Order Sent!",
+      description: "Order details have been sent to WhatsApp.",
+    });
+
+    clearCart();
+  } catch (error) {
+    console.error("Error processing order:", error);
+    toast({
+      title: "Error",
+      description: "There was an issue sending your order to WhatsApp. Please try again.",
+      variant: "destructive",
+    });
+  }
+};
+
 
   const handleCartClick = () => {
     window.location.href = "/cart";
