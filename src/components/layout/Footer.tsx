@@ -86,7 +86,7 @@ const Footer = () => {
             <div className="space-y-2 text-sm text-primary-foreground/80">
               <p>Email: hello@tommy.com</p>
               <p>Phone: +1 (555) 123-4567</p>
-              <p>Hours: Mon-Fri 9AM-6PM</p>
+              <p>Hours: Mon-Sun 9AM-6PM</p>
             </div>
             <Button 
               variant="outline" 
@@ -104,7 +104,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-6 text-center">
           <p className="text-primary-foreground/60 text-sm">
-            © 2024 Tommy. All rights reserved. Crafted with care for premium comfort.
+            © 2025 Tommy. All rights reserved. Crafted with care for premium comfort.
           </p>
         </div>
       </div>
