@@ -13,86 +13,27 @@ import hoodieNavy from "@/assets/hoodie-navy-new.jpg";
 import sweatshirtBlack from "@/assets/sweatshirt-black-new.jpg";
 import hoodieGray from "@/assets/hoodie-gray-new.jpg";
 
-// Product data that matches FeaturedProducts
-const products = {
-  "1": {
-    id: "1",
-    name: "Essential Navy Hoodie",
-    price: 89,
-    image: hoodieNavy,
-    category: "Hoodies",
-  },
-  "2": { 
-    id: "2",
-    name: "Classic Black Sweatshirt",
-    price: 79,
-    image: sweatshirtBlack,
-    category: "Sweatshirts",
-  },
-  "3": {
-    id: "3",
-    name: "Premium Gray Hoodie",
-    price: 94,
-    image: hoodieGray,
-    category: "Hoodies",
-  },
-  "4": {
-    id: "4",
-    name: "Essential Navy Hoodie",
-    price: 89,
-    image: hoodieNavy,
-    category: "Hoodies",
-  },
-  "5": {
-    id: "5",
-    name: "Classic Black Sweatshirt",
-    price: 79,
-    image: sweatshirtBlack,
-    category: "Sweatshirts",
-  },
-  "6": {
-    id: "6",
-    name: "Premium Gray Hoodie",
-    price: 94,
-    image: hoodieGray,
-    category: "Hoodies",
-  },
-};
+// Product data (simplified for featured section)
+const products = [
+  { id: "1", name: "Essential Navy Hoodie", image: hoodieNavy, category: "Hoodies" },
+  { id: "2", name: "Classic Black Sweatshirt", image: sweatshirtBlack, category: "Sweatshirts" },
+  { id: "3", name: "Premium Gray Hoodie", image: hoodieGray, category: "Hoodies" },
+  { id: "4", name: "Essential Navy Hoodie", image: hoodieNavy, category: "Hoodies" },
+  { id: "5", name: "Classic Black Sweatshirt", image: sweatshirtBlack, category: "Sweatshirts" },
+  { id: "6", name: "Premium Gray Hoodie", image: hoodieGray, category: "Hoodies" },
+];
 
 const Home = () => {
-  const { addToCart, getTotalItems } = useCart();
+  const { getTotalItems } = useCart();
   const { toast } = useToast();
-
-  const handleAddToCart = (productId: string) => {
-    // Get actual product data
-    const product = products[productId as keyof typeof products];
-    if (!product) return;
-    
-    const productData = {
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      image: product.image,
-      size: 'M' // Default size
-    };
-    
-    addToCart(productData);
-    toast({
-      title: "Added to cart",
-      description: `${product.name} has been added to your cart successfully.`,
-    });
-  };
-
-  const handleProductClick = (productId: string) => {
-    window.location.href = `/product/${productId}`;
-  };
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleCartClick = () => {
     window.location.href = "/cart";
   };
 
   const handleMenuClick = () => {
-    console.log("Mobile menu clicked");
+    setMenuOpen((prev) => !prev);
   };
 
   return (
@@ -101,14 +42,12 @@ const Home = () => {
         cartItemsCount={getTotalItems()}
         onCartClick={handleCartClick}
         onMenuClick={handleMenuClick}
+        menuOpen={menuOpen} // pass to Header for toggle logic
       />
       
       <main>
         <Hero />
-        <FeaturedProducts 
-          onAddToCart={handleAddToCart}
-          onProductClick={handleProductClick}
-        />
+        <FeaturedProducts products={products} />
         <QuickShop />
         <TrustSignals />
       </main>
