@@ -4,7 +4,7 @@ import productsCollection from "@/assets/products-collection.jpg";
 
 const QuickShop = () => {
   return (
-    <section className="py-16 px-4">
+    <section id="shop-by-category" className="py-16 px-4">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Image */}

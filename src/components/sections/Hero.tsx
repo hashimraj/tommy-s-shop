@@ -31,18 +31,19 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
+            {/* Scroll to Shop by Category */}
             <Button 
               size="lg" 
               className="bg-white text-primary hover:bg-white/90 shadow-hero group px-8"
               onClick={() => {
-                console.log("Shop Collection clicked");
-                document.getElementById('featured-products')?.scrollIntoView({ behavior: 'smooth' });
+                document.getElementById("shop-by-category")?.scrollIntoView({ behavior: "smooth" });
               }}
             >
               Shop Collection
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
             
+            {/* Offers Button */}
             <Button 
               variant="outline" 
               size="lg"
@@ -57,7 +58,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Decorative Elements */}
+      {/* Decorative Gradient */}
       <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
