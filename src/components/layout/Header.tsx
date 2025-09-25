@@ -3,7 +3,7 @@ import { ShoppingCart, Menu, ChevronDown, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo1.png";
 
 interface HeaderProps {
   cartItemsCount?: number;
