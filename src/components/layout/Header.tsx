@@ -101,58 +101,61 @@ const Header = ({ cartItemsCount = 0 }: HeaderProps) => {
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[260px] sm:w-[320px]">
-              <nav className="flex flex-col space-y-4 mt-6">
-                {/* Main Nav */}
-                {navigation.map((item) => (
-                  <button
-                    key={item.name}
-                    onClick={() => {
-                      window.location.href = item.href;
-                      setIsOpen(false);
-                    }}
-                    className="text-foreground/80 hover:text-primary transition-colors font-medium text-left px-2 py-2"
-                  >
-                    {item.name}
-                  </button>
-                ))}
+            <SheetContent side="right" className="w-[260px] sm:w-[320px] p-0">
+              {/* Scrollable Menu */}
+              <div className="flex flex-col h-full overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent">
+                <nav className="flex flex-col space-y-2 mt-4 px-4">
+                  {/* Main Nav */}
+                  {navigation.map((item) => (
+                    <button
+                      key={item.name}
+                      onClick={() => {
+                        window.location.href = item.href;
+                        setIsOpen(false);
+                      }}
+                      className="text-foreground/80 hover:text-primary transition-colors font-medium text-left py-2"
+                    >
+                      {item.name}
+                    </button>
+                  ))}
 
-                {/* Wear Categories */}
-                <div className="pt-4 border-t">
-                  <h4 className="flex items-center text-foreground font-semibold mb-3 px-2">
-                    Shop by Wear Category{" "}
-                    <ChevronDown className="ml-2 h-4 w-4 text-muted-foreground" />
-                  </h4>
-                  <div className="flex flex-col space-y-2">
-                    {wearCategories.map((cat) => (
-                      <button
-                        key={cat.name}
-                        onClick={() => {
-                          window.location.href = cat.href;
-                          setIsOpen(false);
-                        }}
-                        className="text-foreground/70 hover:text-primary transition-colors text-sm text-left px-10 py-1"
-                      >
-                        {cat.name}
-                      </button>
-                    ))}
+                  {/* Wear Categories */}
+                  <div className="pt-3 border-t">
+                    <h4 className="flex items-center text-foreground font-semibold mb-2">
+                      Shop by Wear Category{" "}
+                      <ChevronDown className="ml-2 h-4 w-4 text-muted-foreground" />
+                    </h4>
+                    <div className="flex flex-col space-y-1">
+                      {wearCategories.map((cat) => (
+                        <button
+                          key={cat.name}
+                          onClick={() => {
+                            window.location.href = cat.href;
+                            setIsOpen(false);
+                          }}
+                          className="text-foreground/70 hover:text-primary transition-colors text-sm text-left py-1 pl-6"
+                        >
+                          {cat.name}
+                        </button>
+                      ))}
+                    </div>
                   </div>
-                </div>
 
-                {/* WhatsApp Button (Mobile) */}
-                <div className="pt-4 border-t">
-                  <Button
-                    className="w-full gap-2 bg-gradient-to-r from-green-500 to-green-600 text-white hover:opacity-90"
-                    onClick={() => {
-                      setIsOpen(false);
-                      handleWhatsAppClick();
-                    }}
-                  >
-                    <MessageSquare className="h-4 w-4" />
-                    WhatsApp
-                  </Button>
-                </div>
-              </nav>
+                  {/* WhatsApp Button (Mobile) */}
+                  <div className="pt-3 border-t mb-4">
+                    <Button
+                      className="w-full gap-2 bg-gradient-to-r from-green-500 to-green-600 text-white hover:opacity-90"
+                      onClick={() => {
+                        setIsOpen(false);
+                        handleWhatsAppClick();
+                      }}
+                    >
+                      <MessageSquare className="h-4 w-4" />
+                      WhatsApp
+                    </Button>
+                  </div>
+                </nav>
+              </div>
             </SheetContent>
           </Sheet>
         </div>
@@ -162,4 +165,3 @@ const Header = ({ cartItemsCount = 0 }: HeaderProps) => {
 };
 
 export default Header;
-
