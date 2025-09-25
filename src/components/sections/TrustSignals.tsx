@@ -30,7 +30,7 @@ const TrustSignals = () => {
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-            Why Choose Tommy?
+            Why Choose Bón Vón?
           </h2>
           <p className="text-muted-foreground">
             Experience the difference with our commitment to quality and service

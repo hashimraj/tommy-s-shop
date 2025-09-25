@@ -8,10 +8,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold tracking-wider">TOMMY</h3>
+            <h3 className="text-2xl font-bold tracking-wider">Bón Vón</h3>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
-              Premium hoodies and sweatshirts crafted for comfort and style. 
-              Elevating everyday wear with exceptional quality.
+              Premium apparel crafted for comfort and style, designed to elevate everyday wear with exceptional quality.
             </p>
             <div className="flex space-x-3">
               <Button variant="ghost" size="sm" className="text-primary-foreground hover:bg-primary-foreground/10">
@@ -104,7 +103,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-6 text-center">
           <p className="text-primary-foreground/60 text-sm">
-            © 2025 Tommy. All rights reserved. Crafted with care for premium comfort.
+            © 2025 Bón Vón. All rights reserved. Crafted with care for premium comfort.
           </p>
         </div>
       </div>

@@ -1,19 +1,32 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import productsCollection from "@/assets/products-collection.jpg";
+import { Link } from "react-router-dom";
+
+// ✅ Simple list of remaining categories (words only, includes Hoodies & Sweatshirts)
+const otherCategories = [
+  { name: "Jackets", path: "/jackets" },
+  { name: "Shirts", path: "/shirts" },
+  { name: "Shorts", path: "/shorts" },
+  { name: "Underwear", path: "/underwear" },
+  { name: "Sweatpants", path: "/sweatpants" },
+  { name: "Bags", path: "/bags" },
+  { name: "Hoodies", path: "/hoodies" },
+  { name: "Sweatshirts", path: "/sweatshirts" },
+];
 
 const QuickShop = () => {
   return (
     <section id="shop-by-category" className="py-16 px-4">
       <div className="container mx-auto">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Image */}
           <div className="order-2 md:order-1">
-            <div className="relative overflow-hidden rounded-lg shadow-card">
+            <div className="relative overflow-hidden rounded-2xl shadow-lg">
               <img
                 src={productsCollection}
                 alt="Tommy Collection"
-                className="w-full h-[400px] md:h-[500px] object-cover"
+                className="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
           </div>
@@ -24,63 +37,65 @@ const QuickShop = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Shop by Category
               </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Choose from our carefully curated selection of premium hoodies and sweatshirts. 
-                Each piece is designed with attention to detail and crafted for lasting comfort.
+              <p className="text-muted-foreground text-lg leading-relaxed max-w-md">
+                Discover our latest arrivals and timeless essentials —
+                thoughtfully designed to bring comfort and confidence to
+                your everyday wear.
               </p>
             </div>
 
+            {/* Featured categories (Men & Women) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Card 
-                className="group cursor-pointer hover:shadow-card transition-all duration-300 hover:-translate-y-1"
-                onClick={() => {
-                  window.location.href = "/hoodies";
-                }}
-              >
-                <CardContent className="p-6 text-center">
-                  <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
-                    Hoodies
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-4">
-                    Cozy and stylish hoodies for every occasion
-                  </p>
-                  <Button variant="outline" size="sm" className="w-full">
-                    Shop Hoodies
-                  </Button>
-                </CardContent>
-              </Card>
+              {/* Men */}
+              <Link to="/men">
+                <Card className="group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <CardContent className="p-6 text-center">
+                    <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
+                      Men
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4">
+                      Explore modern essentials for every man’s wardrobe
+                    </p>
+                    <Button variant="outline" size="sm" className="w-full">
+                      Shop Men
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Link>
 
-              <Card 
-                className="group cursor-pointer hover:shadow-card transition-all duration-300 hover:-translate-y-1"
-                onClick={() => {
-                  window.location.href = "/sweatshirts";
-                }}
-              >
-                <CardContent className="p-6 text-center">
-                  <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
-                    Sweatshirts
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-4">
-                    Classic sweatshirts with modern appeal
-                  </p>
-                  <Button variant="outline" size="sm" className="w-full">
-                    Shop Sweatshirts
-                  </Button>
-                </CardContent>
-              </Card>
+              {/* Women */}
+              <Link to="/women">
+                <Card className="group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <CardContent className="p-6 text-center">
+                    <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
+                      Women
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4">
+                      Elegant and versatile styles for every occasion
+                    </p>
+                    <Button variant="outline" size="sm" className="w-full">
+                      Shop Women
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Link>
             </div>
 
-            <div className="pt-4">
-              <Button 
-                size="lg" 
-                className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90"
-                onClick={() => {
-                  console.log("View All Products from QuickShop clicked");
-                  document.getElementById('featured-products')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
-                View All Products
-              </Button>
+            {/* Other categories (text links only) */}
+            <div className="pt-6 grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {otherCategories.map((cat) => (
+                <Link
+                  key={cat.name}
+                  to={cat.path}
+                  className="text-lg font-medium text-foreground hover:text-accent transition-colors relative group"
+                >
+                  {cat.name}
+                  <span className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    →
+                  </span>
+                  <span className="block h-0.5 w-0 bg-accent group-hover:w-full transition-all duration-300"></span>
+                </Link>
+              ))}
             </div>
           </div>
         </div>

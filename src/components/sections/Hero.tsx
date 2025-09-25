@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-hoodie.jpg";
 
 const Hero = () => {
@@ -26,33 +26,35 @@ const Hero = () => {
           </h1>
           
           <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
-            Discover our curated collection of premium hoodies and sweatshirts, 
-            crafted for ultimate comfort and style.
+            Elevate your everyday look with our carefully selected pieces designed to blend style and comfort effortlessly.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-            {/* Scroll to Shop by Category */}
-            <Button 
-              size="lg" 
-              className="bg-white text-primary hover:bg-white/90 shadow-hero group px-8"
-              onClick={() => {
-                document.getElementById("shop-by-category")?.scrollIntoView({ behavior: "smooth" });
-              }}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+            {/* Shop Collection Button */}
+            <Button
+              size="lg"
+              className="bg-white text-primary hover:bg-white/90 shadow-lg shadow-black/20 group px-8 font-semibold rounded-xl"
+              onClick={() =>
+                document
+                  .getElementById("shop-by-category")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               Shop Collection
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
-            
-            {/* Offers Button */}
-            <Button 
-              variant="outline" 
+
+            {/* New Arrivals CTA */}
+            <Button
               size="lg"
-              className="border-white bg-white/10 text-white hover:bg-white hover:text-primary transition-all duration-300 px-8 font-semibold"
+              variant="secondary"
+              className="bg-primary text-white hover:bg-primary/90 px-8 font-semibold rounded-xl"
               onClick={() => {
-                window.location.href = "/offers";
+                window.location.href = "/new-arrivals";
               }}
             >
-              View Offers
+              <Sparkles className="mr-2 h-5 w-5" />
+              New Arrivals
             </Button>
           </div>
         </div>
