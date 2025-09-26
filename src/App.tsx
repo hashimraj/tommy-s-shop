@@ -25,6 +25,8 @@ import Bags from "./pages/Bags";
 // ✅ Import ScrollToTop
 import ScrollToTop from "./components/ScrollToTop";
 
+import ScrollButton from "./components/ScrollButton";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -55,6 +57,7 @@ const App = () => (
             {/* Catch-all route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <ScrollButton /> {/* floating button for manual scroll */}
         </BrowserRouter>
       </TooltipProvider>
     </CartProvider>

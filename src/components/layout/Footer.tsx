@@ -1,5 +1,6 @@
 import { Instagram, Twitter, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -8,18 +9,31 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold tracking-wider">Bón Vón</h3>
+            <h3 className="text-2xl font-bold tracking-wider">Bón Von</h3>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
-              Premium apparel crafted for comfort and style, designed to elevate everyday wear with exceptional quality.
+              Premium apparel crafted for comfort and style, designed to elevate
+              everyday wear with exceptional quality.
             </p>
             <div className="flex space-x-3">
-              <Button variant="ghost" size="sm" className="text-primary-foreground hover:bg-primary-foreground/10">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-primary-foreground hover:bg-primary-foreground/10"
+              >
                 <Instagram className="h-4 w-4" />
               </Button>
-              <Button variant="ghost" size="sm" className="text-primary-foreground hover:bg-primary-foreground/10">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-primary-foreground hover:bg-primary-foreground/10"
+              >
                 <Twitter className="h-4 w-4" />
               </Button>
-              <Button variant="ghost" size="sm" className="text-primary-foreground hover:bg-primary-foreground/10">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-primary-foreground hover:bg-primary-foreground/10"
+              >
                 <Facebook className="h-4 w-4" />
               </Button>
             </div>
@@ -30,52 +44,48 @@ const Footer = () => {
             <h4 className="font-semibold">Shop</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#hoodies" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Hoodies
-                </a>
+                <Link
+                  to="/men"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Men
+                </Link>
               </li>
               <li>
-                <a href="#sweatshirts" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Sweatshirts
-                </a>
+                <Link
+                  to="/women"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Women
+                </Link>
               </li>
               <li>
-                <a href="#offers" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Special Offers
-                </a>
+                <Link
+                  to="/bags"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Bags
+                </Link>
               </li>
               <li>
-                <a href="#new" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <Link
+                  to="/new-arrivals"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
                   New Arrivals
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Support */}
+          {/* Support (no links) */}
           <div className="space-y-4">
             <h4 className="font-semibold">Support</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#contact" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Contact Us
-                </a>
-              </li>
-              <li>
-                <a href="#shipping" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Shipping Info
-                </a>
-              </li>
-              <li>
-                <a href="#returns" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Returns
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  FAQ
-                </a>
-              </li>
+            <ul className="space-y-2 text-sm text-primary-foreground/80">
+              <li>Contact Us</li>
+              <li>Shipping Info</li>
+              <li>Returns</li>
+              <li>FAQ</li>
             </ul>
           </div>
 
@@ -87,13 +97,19 @@ const Footer = () => {
               <p>Phone: +1 (555) 123-4567</p>
               <p>Hours: Mon-Sun 9AM-6PM</p>
             </div>
-            <Button 
-              variant="outline" 
-              size="sm" 
+            <Button
+              variant="outline"
+              size="sm"
               className="bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary transition-all duration-300 font-semibold"
               onClick={() => {
-                const message = "Hi! I'm interested in your products. Can you help me?";
-                window.open(`https://wa.me/254758905603?text=${encodeURIComponent(message)}`, '_blank');
+                const message =
+                  "Hi! I'm interested in your products. Can you help me?";
+                window.open(
+                  `https://wa.me/254758905603?text=${encodeURIComponent(
+                    message
+                  )}`,
+                  "_blank"
+                );
               }}
             >
               WhatsApp Chat
@@ -103,7 +119,8 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-6 text-center">
           <p className="text-primary-foreground/60 text-sm">
-            © 2025 Bón Vón. All rights reserved. Crafted with care for premium comfort.
+            © 2025 Bón Von. All rights reserved. Crafted with care for premium
+            comfort.
           </p>
         </div>
       </div>
