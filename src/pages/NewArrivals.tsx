@@ -5,8 +5,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useCart } from "@/contexts/CartContext";
 import { Star, ShoppingCart, Heart } from "lucide-react";
-import heroHoodie from "@/assets/hero-hoodie.jpg";
-import productsCollection from "@/assets/products-collection.jpg";
+import heroHoodie from "@/assets/heroHoodie.jpg";
+import productsCollection from "@/assets/productsCollection.jpg";
+import graphicTee from "@/assets/graphicTee.jpg";
+import slimFitChinos from "@/assets/slimFitChinos.jpg";
 
 const NewArrivals = () => {
   const { addToCart, getTotalItems } = useCart();
@@ -34,7 +36,7 @@ const NewArrivals = () => {
       title: "Graphic Tee",
       description: "Minimal print on soft organic cotton.",
       price: 35,
-      image: heroHoodie,
+      image: graphicTee,
       featured: false,
     },
     {
@@ -42,7 +44,7 @@ const NewArrivals = () => {
       title: "Slim Fit Chinos",
       description: "Versatile pants in lightweight stretch fabric.",
       price: 70,
-      image: productsCollection,
+      image: slimFitChinos,
       featured: true,
     },
   ];

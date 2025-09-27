@@ -1,11 +1,11 @@
 // Hoodie images (local)
 import hoodieWhitePremium from "@/assets/hoodie-white-premium.jpg";
-import hoodieGreenModern from "@/assets/hoodie-green-modern.jpg";
+import hoodieGreenModern from "@/assets/hoodieGreenModern.jpg";
 import hoodieBlueAthletic from "@/assets/hoodie-blue-athletic.jpg";
 
 // Sweatshirt images (local)
-import sweatshirtBeigeMinimal from "@/assets/sweatshirt-beige-minimal.jpg";
-import sweatshirtBlackNew from "@/assets/sweatshirt-black-new.jpg";
+import sweatshirtBeigeMinimal from "@/assets/sweatshirtBeigeMinimal.jpg";
+import sweatshirtBlackNew from "@/assets/sweatshirtBlackNew.jpg";
 
 import jacketDenim from "@/assets/jacketDenim.jpg";
 import jacketLeather from "@/assets/jacketLeather.jpg";
@@ -19,6 +19,19 @@ import jeansWomen from "@/assets/jeansWomen.jpg";
 import dressSummer from "@/assets/dressSummer.jpg";
 import dressEvening from "@/assets/dressEvening.jpg";
 
+import backpackLeather from "@/assets/backpackLeather.jpg";
+import toteCanvas from "@/assets/toteCanvas.jpg";
+
+import shortsMen from "@/assets/shortsMen.jpg";
+import shortsWomen from "@/assets/shortsWomen.jpg";
+
+import underwearWomen from "@/assets/underwearWomen.jpg";
+import underwearMen from "@/assets/underwearMen.jpg";
+
+import sweatpantsAthletic from "@/assets/sweatpantsAthletic.jpg";
+import sweatpantsCasual from "@/assets/sweatpantsCasual.jpg";
+
+
 export type Product = {
   id: string;
   name: string;
@@ -29,35 +42,17 @@ export type Product = {
   features?: string[];
   gender: "men" | "women" | "unisex";
   category:
-    | "hoodie"
-    | "sweatshirt"
-    | "jackets"
-    | "shirts"
-    | "jeans"
-    | "dress"
-    | "bag"
-    | "shorts"
-    | "underwear"
-    | "sweatpants";
+  | "hoodie"
+  | "sweatshirt"
+  | "jackets"
+  | "shirts"
+  | "jeans"
+  | "dress"
+  | "bag"
+  | "shorts"
+  | "underwear"
+  | "sweatpants";
 };
-
-// ✅ Reliable product images (Unsplash + Pexels)
-const backpackLeather =
-  "https://images.pexels.com/photos/6311393/pexels-photo-6311393.jpeg?auto=compress&cs=tinysrgb&w=400";
-const toteCanvas =
-  "https://images.pexels.com/photos/4462785/pexels-photo-4462785.jpeg?auto=compress&cs=tinysrgb&w=400";
-const shortsMen =
-  "https://images.pexels.com/photos/7691360/pexels-photo-7691360.jpeg?auto=compress&cs=tinysrgb&w=400";
-const shortsWomen =
-  "https://images.pexels.com/photos/5723616/pexels-photo-5723616.jpeg?auto=compress&cs=tinysrgb&w=400";
-const underwearWomen =
-  "https://images.pexels.com/photos/6311575/pexels-photo-6311575.jpeg?auto=compress&cs=tinysrgb&w=400";
-const underwearMen =
-  "https://images.pexels.com/photos/4061552/pexels-photo-4061552.jpeg?auto=compress&cs=tinysrgb&w=400";
-const sweatpantsAthletic =
-  "https://images.pexels.com/photos/6311576/pexels-photo-6311576.jpeg?auto=compress&cs=tinysrgb&w=400";
-const sweatpantsCasual =
-  "https://images.pexels.com/photos/6311617/pexels-photo-6311617.jpeg?auto=compress&cs=tinysrgb&w=400";
 
 export const products: Product[] = [
   // --- Hoodies (local) ---
@@ -79,6 +74,7 @@ export const products: Product[] = [
     image: hoodieGreenModern,
     sizes: ["S", "M", "L", "XL"],
     description: "Modern green hoodie with contemporary design.",
+    features: ["Breathable fabric", "Soft inner lining", "Front pocket"],
     gender: "men",
     category: "hoodie",
   },
@@ -89,6 +85,7 @@ export const products: Product[] = [
     image: hoodieBlueAthletic,
     sizes: ["M", "L", "XL", "XXL"],
     description: "Athletic blue hoodie perfect for active lifestyles.",
+    features: ["Moisture-wicking", "Stretchable fit", "Durable zipper"],
     gender: "unisex",
     category: "hoodie",
   },
@@ -101,6 +98,7 @@ export const products: Product[] = [
     image: sweatshirtBeigeMinimal,
     sizes: ["S", "M", "L", "XL"],
     description: "Minimal beige sweatshirt with clean, modern design.",
+    features: ["Lightweight fabric", "Crew neck", "Soft cotton blend"],
     gender: "women",
     category: "sweatshirt",
   },
@@ -111,6 +109,7 @@ export const products: Product[] = [
     image: sweatshirtBlackNew,
     sizes: ["S", "M", "L", "XL"],
     description: "Classic black sweatshirt perfect for casual wear.",
+    features: ["Durable stitching", "Ribbed cuffs", "Easy to wash"],
     gender: "men",
     category: "sweatshirt",
   },
@@ -123,6 +122,7 @@ export const products: Product[] = [
     image: jacketDenim,
     sizes: ["S", "M", "L", "XL"],
     description: "Classic blue denim jacket for timeless casual style.",
+    features: ["100% denim", "Button closure", "Multiple pockets"],
     gender: "unisex",
     category: "jackets",
   },
@@ -133,6 +133,7 @@ export const products: Product[] = [
     image: jacketLeather,
     sizes: ["M", "L", "XL"],
     description: "Premium leather biker jacket with edgy style.",
+    features: ["Genuine leather", "Zipper closure", "Slim fit"],
     gender: "men",
     category: "jackets",
   },
@@ -145,6 +146,7 @@ export const products: Product[] = [
     image: tshirtMen,
     sizes: ["S", "M", "L", "XL"],
     description: "Classic men’s white cotton T-shirt.",
+    features: ["100% cotton", "Breathable fabric", "Regular fit"],
     gender: "men",
     category: "shirts",
   },
@@ -155,6 +157,7 @@ export const products: Product[] = [
     image: blouseWomen,
     sizes: ["S", "M", "L"],
     description: "Light, casual blouse perfect for warm days.",
+    features: ["Lightweight", "Button-up front", "Relaxed fit"],
     gender: "women",
     category: "shirts",
   },
@@ -167,6 +170,7 @@ export const products: Product[] = [
     image: jeansMen,
     sizes: ["S", "M", "L", "XL"],
     description: "Stylish slim-fit jeans suitable for all occasions.",
+    features: ["Stretch denim", "Slim fit", "Classic 5-pocket design"],
     gender: "men",
     category: "jeans",
   },
@@ -177,6 +181,7 @@ export const products: Product[] = [
     image: jeansWomen,
     sizes: ["S", "M", "L"],
     description: "Trendy high-waist jeans with comfortable fit.",
+    features: ["High-rise waist", "Straight leg", "Durable fabric"],
     gender: "women",
     category: "jeans",
   },
@@ -189,6 +194,7 @@ export const products: Product[] = [
     image: dressSummer,
     sizes: ["S", "M", "L"],
     description: "Light and airy summer dress with floral design.",
+    features: ["Floral print", "Breathable fabric", "Sleeveless design"],
     gender: "women",
     category: "dress",
   },
@@ -199,6 +205,7 @@ export const products: Product[] = [
     image: dressEvening,
     sizes: ["S", "M", "L"],
     description: "Elegant evening gown for special occasions.",
+    features: ["Maxi length", "Elegant neckline", "Flowing fabric"],
     gender: "women",
     category: "dress",
   },
@@ -211,6 +218,7 @@ export const products: Product[] = [
     image: backpackLeather,
     sizes: [],
     description: "Durable leather backpack for daily use.",
+    features: ["Adjustable straps", "Spacious interior", "Zipper closure"],
     gender: "unisex",
     category: "bag",
   },
@@ -221,6 +229,7 @@ export const products: Product[] = [
     image: toteCanvas,
     sizes: [],
     description: "Eco-friendly canvas tote bag for casual use.",
+    features: ["Lightweight", "Reinforced handles", "Washable material"],
     gender: "women",
     category: "bag",
   },
@@ -233,6 +242,7 @@ export const products: Product[] = [
     image: shortsMen,
     sizes: ["S", "M", "L", "XL"],
     description: "Lightweight cotton shorts for summer comfort.",
+    features: ["Breathable fabric", "Elastic waistband", "Side pockets"],
     gender: "men",
     category: "shorts",
   },
@@ -243,6 +253,7 @@ export const products: Product[] = [
     image: shortsWomen,
     sizes: ["S", "M", "L"],
     description: "Trendy women’s denim shorts with a relaxed fit.",
+    features: ["Classic denim", "Rolled hem", "Button & zipper closure"],
     gender: "women",
     category: "shorts",
   },
@@ -255,6 +266,7 @@ export const products: Product[] = [
     image: underwearWomen,
     sizes: ["S", "M", "L"],
     description: "Soft cotton underwear for all-day comfort.",
+    features: ["Soft cotton", "Elastic waistband", "Breathable fabric"],
     gender: "women",
     category: "underwear",
   },
@@ -265,6 +277,7 @@ export const products: Product[] = [
     image: underwearMen,
     sizes: ["M", "L", "XL"],
     description: "Pack of 3 men’s cotton boxers.",
+    features: ["3-pack", "Stretchable fabric", "Comfort fit"],
     gender: "men",
     category: "underwear",
   },
@@ -277,6 +290,7 @@ export const products: Product[] = [
     image: sweatpantsAthletic,
     sizes: ["S", "M", "L", "XL"],
     description: "Performance sweatpants designed for training.",
+    features: ["Moisture control", "Elastic cuffs", "Drawstring waist"],
     gender: "unisex",
     category: "sweatpants",
   },
@@ -287,6 +301,7 @@ export const products: Product[] = [
     image: sweatpantsCasual,
     sizes: ["S", "M", "L"],
     description: "Soft grey sweatpants perfect for lounging.",
+    features: ["Soft fleece lining", "Elastic waistband", "Relaxed fit"],
     gender: "men",
     category: "sweatpants",
   },
