@@ -30,7 +30,7 @@ const Header = ({ cartItemsCount = 0 }: HeaderProps) => {
   ];
 
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/254758905603", "_blank");
+    window.open("https://wa.me/254741464103", "_blank");
   };
 
   return (

@@ -1,4 +1,6 @@
-import { Instagram, Twitter, Facebook } from "lucide-react";
+import { Instagram } from "lucide-react";
+import { FaTiktok } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -20,6 +22,13 @@ const Footer = () => {
                 size="sm"
                 className="text-primary-foreground hover:bg-primary-foreground/10"
               >
+                <FaTiktok className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-primary-foreground hover:bg-primary-foreground/10"
+              >
                 <Instagram className="h-4 w-4" />
               </Button>
               <Button
@@ -27,14 +36,7 @@ const Footer = () => {
                 size="sm"
                 className="text-primary-foreground hover:bg-primary-foreground/10"
               >
-                <Twitter className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="sm"
-                className="text-primary-foreground hover:bg-primary-foreground/10"
-              >
-                <Facebook className="h-4 w-4" />
+                <FaXTwitter className="h-4 w-4" />
               </Button>
             </div>
           </div>
@@ -78,7 +80,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Support (no links) */}
+          {/* Support */}
           <div className="space-y-4">
             <h4 className="font-semibold">Support</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/80">
@@ -93,8 +95,8 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold">Get in Touch</h4>
             <div className="space-y-2 text-sm text-primary-foreground/80">
-              <p>Email: hello@tommy.com</p>
-              <p>Phone: +1 (555) 123-4567</p>
+              <p>Email: bigfamilyseason@gmail.com</p>
+              <p>Phone: +254 741 464103</p>
               <p>Hours: Mon-Sun 9AM-6PM</p>
             </div>
             <Button
@@ -105,7 +107,7 @@ const Footer = () => {
                 const message =
                   "Hi! I'm interested in your products. Can you help me?";
                 window.open(
-                  `https://wa.me/254758905603?text=${encodeURIComponent(
+                  `https://wa.me/254741464103?text=${encodeURIComponent(
                     message
                   )}`,
                   "_blank"
@@ -129,3 +131,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

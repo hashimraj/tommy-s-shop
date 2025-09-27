@@ -65,8 +65,8 @@ ${itemsList}
 📝 *Special Instructions:* ${formData.specialInstructions || "None"}
     `;
 
-    // Send to shop’s WhatsApp (Kenya number: +254758905603)
-    const whatsappNumber = "254758905603";
+    // Send to shop’s WhatsApp (Kenya number: +254741464103)
+    const whatsappNumber = "254741464103";
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappURL, "_blank");
 

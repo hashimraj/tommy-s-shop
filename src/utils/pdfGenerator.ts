@@ -134,7 +134,7 @@ export const generateOrderPDF = async (orderData: OrderData): Promise<Blob> => {
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(10);
   doc.text('Thank you for choosing TOMMY!', 20, yPosition);
-  doc.text('For any questions, please contact us at support@tommy.com', 20, yPosition + 8);
+  doc.text('For any questions, please contact us at bigfamilyseason@gmail.com', 20, yPosition + 8);
   doc.text('We appreciate your business and hope you love your new items.', 20, yPosition + 16);
   
   // Return as blob for sharing
@@ -164,7 +164,7 @@ export const sendToWhatsApp = async (pdfBlob: Blob, customerPhone: string, order
       URL.revokeObjectURL(url);
       
       // Open WhatsApp with order details
-      const storeWhatsApp = "254758905603";
+      const storeWhatsApp = "254741464103";
       const message = `🛍️ NEW ORDER ALERT!
       
 Order #: ${orderNumber}

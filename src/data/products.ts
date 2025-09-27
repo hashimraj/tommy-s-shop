@@ -7,6 +7,18 @@ import hoodieBlueAthletic from "@/assets/hoodie-blue-athletic.jpg";
 import sweatshirtBeigeMinimal from "@/assets/sweatshirt-beige-minimal.jpg";
 import sweatshirtBlackNew from "@/assets/sweatshirt-black-new.jpg";
 
+import jacketDenim from "@/assets/jacketDenim.jpg";
+import jacketLeather from "@/assets/jacketLeather.jpg";
+
+import tshirtMen from "@/assets/tshirtMen.jpg";
+import blouseWomen from "@/assets/blouseWomen.jpg";
+
+import jeansMen from "@/assets/jeansMen.jpg";
+import jeansWomen from "@/assets/jeansWomen.jpg";
+
+import dressSummer from "@/assets/dressSummer.jpg";
+import dressEvening from "@/assets/dressEvening.jpg";
+
 export type Product = {
   id: string;
   name: string;
@@ -30,22 +42,6 @@ export type Product = {
 };
 
 // ✅ Reliable product images (Unsplash + Pexels)
-const jacketDenim =
-  "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=400";
-const jacketLeather =
-  "https://images.pexels.com/photos/428338/pexels-photo-428338.jpeg?auto=compress&cs=tinysrgb&w=400";
-const tshirtMen =
-  "https://images.pexels.com/photos/10026491/pexels-photo-10026491.jpeg?auto=compress&cs=tinysrgb&w=400";
-const blouseWomen =
-  "https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=400";
-const jeansMen =
-  "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=400";
-const jeansWomen =
-  "https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=400";
-const dressSummer =
-  "https://images.pexels.com/photos/1986921/pexels-photo-1986921.jpeg?auto=compress&cs=tinysrgb&w=400";
-const dressEvening =
-  "https://images.pexels.com/photos/1488463/pexels-photo-1488463.jpeg?auto=compress&cs=tinysrgb&w=400";
 const backpackLeather =
   "https://images.pexels.com/photos/6311393/pexels-photo-6311393.jpeg?auto=compress&cs=tinysrgb&w=400";
 const toteCanvas =
